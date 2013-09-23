@@ -13,7 +13,7 @@ setup(
     keywords = 'xdg python ncurses',
     install_requires = ['pyxdg', 'urwid'],
     entry_points = {
-        'console_scripts': ['cursedxdg/cursedxdg.py']},
+        'console_scripts': ['cursedxdg=cursedxdg.cursedxdg:main']},
     classifiers = [
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
@@ -23,6 +23,7 @@ setup(
         'Programming Language :: Python :: 2.7',
     ],
     author = 'David Francos',
+    packages = ['cursedxdg'],
     author_email = 'me@davidfrancos.net',
     maintainer = 'David Francos',
     maintainer_email = 'me@davidfrancos.net',
