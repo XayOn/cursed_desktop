@@ -1,3 +1,0 @@
-[console_scripts]
-cursedxdg = cursedxdg.cursedxdg
-

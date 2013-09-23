@@ -1,7 +1,0 @@
-setup.py
-CursedXDG.egg-info/PKG-INFO
-CursedXDG.egg-info/SOURCES.txt
-CursedXDG.egg-info/dependency_links.txt
-CursedXDG.egg-info/entry_points.txt
-CursedXDG.egg-info/requires.txt
-CursedXDG.egg-info/top_level.txt
