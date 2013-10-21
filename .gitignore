@@ -1,0 +1,4 @@
+CursedXDG.egg-info/
+build
+dist
+*.pyc

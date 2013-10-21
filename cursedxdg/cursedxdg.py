@@ -2,6 +2,7 @@ import os, sys, urwid
 from xdg import DesktopEntry
 
 appdir="/usr/share/applications/"
+__top__=False
 
 def read_menus():
     """
@@ -28,7 +29,7 @@ def menu_button(caption, program, callback):
 def sub_menu(caption, choices):
     contents = menu(caption, choices)
     def open_menu(button, foo=False):
-        return top.open_box(contents)
+        return __top__.open_box(contents)
     return menu_button([caption, ''], False, open_menu)
 
 def menu(title, choices):
@@ -40,14 +41,7 @@ def exit_program(button, none):
     raise urwid.ExitMainLoop()
 
 def main():
-    allmenus = read_menus()
-    palette = [
-        ('banner', 'black', 'light gray'),
-        ('streak', 'black', 'dark red'),
-        ('bg', 'black', 'dark blue'),]
-    top = CascadingBoxes(menu('Main menu', [sub_menu(menu_category, [menu_button(item.getName(), item.getExec(), lambda foo, x:sys.exit(os.system(x))
-    ) for item in allmenus[menu_category] ]) for menu_category in allmenus.keys()] + [menu_button('Exit', False, exit_program)] ))
-    urwid.MainLoop(top, palette).run()
+   urwid.MainLoop(__top__, palette).run()
 
 class CascadingBoxes(urwid.WidgetPlaceholder):
     max_box_levels = 4
@@ -77,6 +71,13 @@ class CascadingBoxes(urwid.WidgetPlaceholder):
             self.box_level -= 1
         else:
             return super(CascadingBoxes, self).keypress(size, key)
+allmenus = read_menus()
+palette = [
+    ('banner', 'black', 'light gray'),
+    ('streak', 'black', 'dark red'),
+    ('bg', 'black', 'dark blue'),]
+__top__= CascadingBoxes(menu('Main menu', [sub_menu(menu_category, [menu_button(item.getName(), item.getExec(), lambda foo, x:sys.exit(os.system(x))
+) for item in allmenus[menu_category] ]) for menu_category in allmenus.keys()] + [menu_button('Exit', False, exit_program)] ))
 
 if __name__ == "__main__":
     main()
