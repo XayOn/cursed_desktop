@@ -7,13 +7,13 @@ from setuptools import find_packages, setup
 
 setup(
     name = 'CursedXDG',
-    version = '0.0.1',
+    version = '0.0.2',
     description = 'XDG compliant menu in ncurses',
     url = 'http://github.com/XayOn/CursedXDG',
     keywords = 'xdg python ncurses',
-    install_requires = ['pyxdg', 'urwid'],
+    install_requires = ['click', 'pyxdg', 'urwid'],
     entry_points = {
-        'console_scripts': ['cursedxdg=cursedxdg.cursedxdg:main']},
+        'console_scripts': ['cursedxdg=cursedxdg:main']},
     classifiers = [
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
