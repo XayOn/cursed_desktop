@@ -13,9 +13,14 @@ class CursedXDG(object):
         CursedXDG
     """
 
-    def __init__(self, appdir="/usr/share/applications/", palette=False):
+    def __init__(self, appdir="/usr/share/applications/", palette=False,
+                 executor="tmux", filter_terminal=True):
         self.appdir = appdir
-        self.apps = glob(os.path.join(self.appdir, '*.desktop'))
+        self.filter_terminal = filter_terminal
+        self.apps = []
+        for path, _, files in os.walk(appdir):
+            self.apps.extend([os.path.join(path, f)
+                              for f in files if f.endswith('desktop')])
         self.palette = palette
         self.windows = [False]
         if not self.palette:
