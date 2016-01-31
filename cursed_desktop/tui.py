@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-import urwid
-
 """
     Ncurses stuffs are always ugly.
 
@@ -28,6 +25,7 @@ import urwid
     Oh! Cool, after documenting and re-learning what this does, it's actually
     not so bad.
 """
+import urwid
 
 
 def menu_button(caption, program, callback):
@@ -49,7 +47,7 @@ def sub_menu(caption, choices, windows):
     """
     contents = menu(caption, choices)
 
-    def open_menu(button, foo=False):
+    def open_menu(button, _=False):
         """
             Ta-Da!
         """
@@ -67,7 +65,7 @@ def menu(title, choices):
     return urwid.ListBox(urwid.SimpleFocusListWalker(body))
 
 
-def exit_program(button, none):
+def exit_program(button=False, _=False):
     """
         GTFO
     """
@@ -116,5 +114,51 @@ class CascadingBoxes(urwid.WidgetPlaceholder):
         if key == 'esc' and self.box_level > 1:
             self.original_widget = self.original_widget[0]
             self.box_level -= 1
+        elif key == "esc" and self.box_level == 1:
+            exit_program()
         else:
-            return super(CascadingBoxes, self).keypress(size, key)
+            super(CascadingBoxes, self).keypress(size, key)
+
+
+def has_formatters(what):
+    """
+        Checks if has any formatters
+    """
+    safely_removed = [r'%k', r'%c', r'%i']
+
+    for key in safely_removed:
+        what = what.replace(key, '')
+
+    if '%' not in what:
+        return False
+
+    if what.count('%') != 1:
+        raise Exception('Multiple formatters are not currently supported')
+
+    return True
+
+
+def format_(what, val):
+    """
+        Handles freedesktop's entry spec exec format modifiers
+        As described in the desktop entry spec:
+        http://standards.freedesktop.org/desktop-entry-spec/latest/ar01s06.html
+    """
+
+    safely_removed = [r'%k', r'%c', r'%i']
+
+    for key in safely_removed:
+        what = what.replace(key, '')
+
+    all_keys = [r'%f', '%u', r'%F', '%U']
+    multi = [r'%F', '%U']
+
+    for key in all_keys:
+        if key in what:
+            if key not in multi:
+                # Acording to the spec, multiple files in single formatters
+                # must be dealt with by the implementations...
+                val = val.split()[0]
+            return what.replace(key, val)
+
+    return what
