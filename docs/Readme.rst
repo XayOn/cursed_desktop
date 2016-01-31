@@ -6,5 +6,5 @@ and creates a complete ncurses menu with it.
 This way you can have your normal system menu with an ncurses TUI, or even make your own menu with .desktop 
 files for your terminal distribution
 
-.. image:: /docs/cursedxdg.png?raw=true
+.. image:: /docs/curse_desktop.gif?raw=true
 
