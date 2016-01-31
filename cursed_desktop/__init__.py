@@ -95,6 +95,15 @@ class CursedXDG(object):
               type=click.Choice(['tmux', 'classic']))
 @click.option('--filter_terminal/--no-filter_terminal', default=True)
 def main(appdir=False, executor=False, filter_terminal=True):
+    """
+        Option management
+    """
+    if executor == "tmux":
+        if not os.environ['TMUX']:
+            raise Exception("In order to use tmux integration, "
+                            "this must be executed from INSIDE a "
+                            "running tmux session")
+
     return CursedXDG(appdir, executor=executor,
                      filter_terminal=filter_terminal).main()
 

@@ -1,2 +1,4 @@
+click
 pyxdg
 urwid
+tmuxp
