@@ -43,3 +43,14 @@ Usage
 
 
 Just running cursed_desktop without options should be fine for most people.
+
+Note
+----
+
+Please, if you use this, put a star on it / interact with an
+issue if you have a problem / send me an email.
+I'll be very happy to know there are people out there at least as
+mad as myself.
+
+This project requires very little maintainment for my personal use
+but I'll be happy to give it a bit more love if you guys support it.
