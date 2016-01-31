@@ -1,0 +1,4 @@
+click
+pyxdg
+urwid
+tmuxp
