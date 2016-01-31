@@ -5,6 +5,7 @@ import urwid
 
 """
     Ncurses stuffs are always ugly.
+
     So... this goes here, hopefully unnoticed by most people.
 
                  __________/%%%%=
