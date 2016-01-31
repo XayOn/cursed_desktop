@@ -4,8 +4,9 @@ import click
 import tmuxp
 from collections import defaultdict
 from xdg.DesktopEntry import DesktopEntry
-from cursedxdg.tui import CascadingBoxes, menu, sub_menu, menu_button,\
-    exit_program
+from cursed_desktop.tui import (CascadingBoxes, menu,
+                                sub_menu, menu_button,
+                                exit_program)
 
 
 class CursedXDG(object):
