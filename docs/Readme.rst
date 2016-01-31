@@ -13,7 +13,7 @@ I frecuently forgot what I have and what it's for, and a menu is really useful f
 So I wrote one that is compliant (mostly) with the freedesktop's standard and is actually a TUI.
 
 
-.. note:: Defaults
+::
 
     By default, cursed_desktop uses TMUX to handle execution and filters out any non-terminal
     apps. It also uses /usr/share/applications directory
