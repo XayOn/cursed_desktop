@@ -1,0 +1,24 @@
+CHANGES
+=======
+
+
+0.0.3
+-----
+
+* Removed history and requirements
+* Moved to pbr
+* Deleted old files
+* Renamed to cursed_desktop
+* New gitignore
+* Fixed exit button
+* Added an option tu use tmux instead of just executing things
+* Rewrote this, previous code was a bit shaming
+* Update Readme.rst
+* fixed foo
+* Update Readme.rst
+* Rename Readme to Readme.rst
+* Screenshot added
+* Ok, this is the first release
+* readme
+* ups
+* initialcommit
