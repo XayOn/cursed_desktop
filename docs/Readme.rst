@@ -5,7 +5,7 @@ A simple ncurses system menu
 
 .. image:: https://img.shields.io/github/downloads/xayon/cursed_desktop/total.svg?maxAge=2592000
 .. image:: https://img.shields.io/pypi/dm/cursed_desktop.svg?maxAge=2592000
-.. image:: https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star&maxAge=2592000
+.. image:: https://img.shields.io/github/stars/xayon/cursed_desktop.svg?style=social&label=Star&maxAge=2592000
 
 .. image:: /docs/cursed_desktop.gif?raw=true
 
