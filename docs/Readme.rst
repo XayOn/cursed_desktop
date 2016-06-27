@@ -3,6 +3,10 @@ Cursed Desktop
 
 A simple ncurses system menu
 
+.. image:: https://img.shields.io/github/downloads/xayon/cursed_desktop/total.svg?maxAge=2592000
+.. image:: https://img.shields.io/pypi/dm/cursed_desktop.svg?maxAge=2592000
+.. image:: https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star&maxAge=2592000
+
 .. image:: /docs/cursed_desktop.gif?raw=true
 
 One of the "modern" improvements commonly found in desktop environments is the applications menu.
@@ -25,7 +29,7 @@ Features
 * Freedesktop.org .desktop file compliant
 * Tmux integration
 
-You may even build your own menu just by changing the .desktop directory to one of your own making 
+You may even build your own menu just by changing the .desktop directory to one of your own making
 that follows the standard.
 
 Usage
